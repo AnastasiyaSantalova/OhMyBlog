@@ -6,6 +6,7 @@ import { BooksComponent } from './books/books.component';
 import { ArticlePageComponent } from './article-page/article-page.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { BookPageComponent } from './book-page/book-page.component';
+import { MatDesignModule } from '../mat-design/mat-design.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BookPageComponent } from './book-page/book-page.component';
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    MatDesignModule
   ]
 })
 export class PagesModule { }
