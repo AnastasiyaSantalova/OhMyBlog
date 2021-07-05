@@ -3,8 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'articles',
+    loadChildren: () => import('./modules/sections/articles-section/articles-section.module').then(m => m.ArticlesSectionModule)
+  },
+  {
+    path: 'books',
+    loadChildren: () => import('./modules/sections/books-section/books-section.module').then(m => m.BooksSectionModule)
+  },
+  {
     path: '',
-    loadChildren: () => import('./modules/pages/pages.module').then(m => m.PagesModule)
+    loadChildren: () => import('./modules/sections/home-section/home-section.module').then(m => m.HomeSectionModule)
   },
 ];
 

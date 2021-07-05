@@ -3,11 +3,11 @@ import { Article } from 'src/app/types/article';
 import { fakeArticles } from '../../../fake-data/articles';
 
 @Component({
-  selector: 'app-articles',
-  templateUrl: './articles.component.html',
-  styleUrls: ['./articles.component.scss']
+  selector: 'app-articles-page',
+  templateUrl: './articles-page.component.html',
+  styleUrls: ['./articles-page.component.scss']
 })
-export class ArticlesComponent implements OnInit {
+export class ArticlesPageComponent implements OnInit {
   articles: Article[] = [];
   constructor() { }
 

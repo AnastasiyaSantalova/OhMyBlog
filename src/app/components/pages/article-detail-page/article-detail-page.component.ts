@@ -3,11 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { fakeArticles } from 'src/app/fake-data/articles';
 import { Article } from 'src/app/types/article';
 @Component({
-  selector: 'app-article-page',
-  templateUrl: './article-page.component.html',
-  styleUrls: ['./article-page.component.scss']
+  selector: 'app-article-detail-page',
+  templateUrl: './article-detail-page.component.html',
+  styleUrls: ['./article-detail-page.component.scss']
 })
-export class ArticlePageComponent implements OnInit {
+export class ArticleDetailPageComponent implements OnInit {
   mockArticle: Article = {
     id: '',
     url: '',
