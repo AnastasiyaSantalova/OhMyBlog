@@ -1,0 +1,18 @@
+<h1>Create new article</h1>
+<hr>
+<div>
+    <form (ngSubmit)="onSubmit()">
+        <mat-form-field color="primary" appearance="outline">
+            <mat-label>Title</mat-label>
+            <input matInput id="title" name="title" [(ngModel)]="title">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Content</mat-label>
+            <textarea matInput></textarea>
+        </mat-form-field>
+        <div>
+            <p class="mat-typography">Publication date: {{ publicationDate }}</p>
+        </div>
+        <button mat-raised-button type="submit">Create</button>
+    </form>
+</div>

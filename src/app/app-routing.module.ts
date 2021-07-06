@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/sections/books-section/books-section.module').then(m => m.BooksSectionModule)
   },
   {
+    path: 'admin',
+    loadChildren: () => import('./modules/sections/admin-section/admin-section.module').then(m => m.AdminSectionModule)
+  },
+  {
     path: '',
     loadChildren: () => import('./modules/sections/home-section/home-section.module').then(m => m.HomeSectionModule)
   },
