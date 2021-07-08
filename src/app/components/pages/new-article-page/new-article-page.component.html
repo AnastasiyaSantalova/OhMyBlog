@@ -2,13 +2,13 @@
 <hr>
 <div>
     <form (ngSubmit)="onSubmit()">
-        <mat-form-field color="primary" appearance="outline">
+        <mat-form-field appearance="outline">
             <mat-label>Title</mat-label>
-            <input matInput id="title" name="title" [(ngModel)]="title">
+            <textarea matInput name="title" [(ngModel)]="title" rows="1" id="articleTitle"></textarea>
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Content</mat-label>
-            <textarea matInput></textarea>
+            <textarea matInput name="content" [(ngModel)]="content" rows="8"></textarea>
         </mat-form-field>
         <div>
             <p class="mat-typography">Publication date: {{ publicationDate }}</p>

@@ -2,3 +2,9 @@
     font-size: 0.8rem;
     font-style: italic;
 }
+
+.article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { MatDesignModule } from '../../mat-design/mat-design.module';
 import { ArticlesSectionRoutingModule } from './articles-section-routing.module';
@@ -15,7 +16,8 @@ import { ArticlesPageComponent } from 'src/app/components/pages/articles-page/ar
   imports: [
     CommonModule,
     ArticlesSectionRoutingModule,
-    MatDesignModule
+    MatDesignModule,
+    RouterModule
   ]
 })
 export class ArticlesSectionModule { }

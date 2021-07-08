@@ -1,0 +1,18 @@
+<h1>Edit article</h1>
+<hr>
+<div>
+    <form (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+            <mat-label>Title</mat-label>
+            <textarea matInput name="title" rows="1" id="articleTitle" [(ngModel)]="title"></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Content</mat-label>
+            <textarea matInput name="content" rows="8" [(ngModel)]="content"></textarea>
+        </mat-form-field>
+        <div>
+            <p class="mat-typography">Publication date will be updated to: {{ publicationDate }}</p>
+        </div>
+        <button mat-raised-button type="submit">Edit</button>
+    </form>
+</div>

@@ -1,5 +1,10 @@
 <div>
-    <h1>{{ article.title }}</h1>
+    <div class="article-header">
+        <h1>{{ article.title }}</h1>
+        <span>
+            <button mat-raised-button routerLink="/admin/edit-article" (click)="sendArticleID()">Edit article</button>
+        </span>
+    </div>
     <p [innerHtml]="article.content"></p>
     <p class="publication-date">{{ article.publicationDate }}</p>
 </div>
