@@ -1,8 +1,6 @@
-export interface Article {
-    id: string,
+export interface ArticleData {
     url: string,
     title: string,
     content: string,
     publicationDate: string,
-    views: number,
 }

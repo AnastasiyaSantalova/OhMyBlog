@@ -7,4 +7,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    button.delete {
+        margin-left: 5px;
+        background-color: lightsalmon;
+    }
 }

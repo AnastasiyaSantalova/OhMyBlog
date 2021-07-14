@@ -1,36 +1,52 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, ReplaySubject, Subject } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, ReplaySubject } from 'rxjs';
 
 import { Article } from 'src/app/types/article';
-import { fakeArticles } from '../../fake-data/articles';
-import { emptyArticle } from 'src/app/fake-data/emptyArticle';
+import { ArticleData } from 'src/app/types/articleData';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  })
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticlesService {
-  private subject = new ReplaySubject<string>();
+  private savedArticleID = new ReplaySubject<string>();
+  private articlesURL = '/api/articles';
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getArticles(): Observable<Article[]> {
-    const articles = of(fakeArticles)
-    return articles;
+    return this.http.get<Article[]>(this.articlesURL);
   }
 
-  getArticleByURL(url: string): Observable<Article> {
-    return of(fakeArticles.find(a => a.url === url) || emptyArticle);
+  getArticle(id: string): Observable<Article> {
+    return this.http.get<Article>(`${this.articlesURL}/${id}`);
   }
 
-  getArticleByID(id: string): Observable<Article> {
-    return of(fakeArticles.find(a => a.id === id) || emptyArticle);
+  createArticle(newArticle: ArticleData): Observable<any> {
+    return this.http.post(this.articlesURL, newArticle, httpOptions)
+  }
+
+  updateArticle(id: string, updatedArticle: ArticleData): Observable<any> {
+    return this.http.put(`${this.articlesURL}/${id}`, updatedArticle, httpOptions)
+  }
+
+  deleteArticle(id: string): Observable<any> {
+    return this.http.delete(`${this.articlesURL}/${id}`, httpOptions)
   }
 
   sendArticleID(id: string): void {
-    this.subject.next(id);
+    this.savedArticleID.next(id);
   }
 
   recieveArticleID(): Observable<string> {
-    return this.subject.asObservable();
+    return this.savedArticleID.asObservable();
   }
 }

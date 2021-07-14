@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Subscription } from 'rxjs';
 
@@ -17,12 +17,13 @@ export class ArticleDetailPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private articleService: ArticlesService
   ) { }
 
   ngOnInit(): void {
     const url = String(this.route.snapshot.paramMap.get('id'));
-    this.articlesSubscription = this.articleService.getArticleByURL(url).subscribe(article => {
+    this.articlesSubscription = this.articleService.getArticle(url).subscribe(article => {
       this.article = article;
     });
   }
@@ -35,5 +36,12 @@ export class ArticleDetailPageComponent implements OnInit {
 
   sendArticleID(): void {
     this.articleService.sendArticleID(this.article.id);
+  }
+
+  deleteArticle() {
+    this.articleService.deleteArticle(this.article.id).subscribe(() => {
+      this.router.navigateByUrl(`/articles`);
+      alert(`Article ${this.article.id} successfully deleted!`);
+    });
   }
 }
