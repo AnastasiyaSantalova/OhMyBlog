@@ -5,13 +5,14 @@ import { EditArticlePageComponent } from 'src/app/components/pages/edit-article-
 import { EditBookPageComponent } from 'src/app/components/pages/edit-book-page/edit-book-page.component';
 import { NewArticlePageComponent } from 'src/app/components/pages/new-article-page/new-article-page.component';
 import { NewBookPageComponent } from 'src/app/components/pages/new-book-page/new-book-page.component';
+import { IsAuthorisedGuard } from 'src/app/guards/is-authorised/is-authorised.guard';
 
 const routes: Routes = [
-    { path: 'new-book', component: NewBookPageComponent },
-    { path: 'new-article', component: NewArticlePageComponent },
-    { path: 'edit-book', component: EditBookPageComponent },
-    { path: 'edit-article', component: EditArticlePageComponent },
-    { path: '', component: AdminPageComponent },
+    { path: 'new-book', component: NewBookPageComponent, canActivate: [IsAuthorisedGuard] },
+    { path: 'new-article', component: NewArticlePageComponent, canActivate: [IsAuthorisedGuard] },
+    { path: 'edit-book', component: EditBookPageComponent, canActivate: [IsAuthorisedGuard] },
+    { path: 'edit-article', component: EditArticlePageComponent, canActivate: [IsAuthorisedGuard] },
+    { path: '', component: AdminPageComponent, canActivate: [IsAuthorisedGuard] },
 ];
 
 @NgModule({

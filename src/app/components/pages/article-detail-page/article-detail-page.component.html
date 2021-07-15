@@ -1,10 +1,14 @@
 <div>
     <div class="article-header">
         <h1>{{ article?.title }}</h1>
-        <span>
+        
+        <!-- If user Singed In -->
+        <span *ngIf="auth.user | async">
             <button class="edit" mat-raised-button routerLink="/admin/edit-article" (click)="sendArticleID()">Edit</button>
             <button class="delete" mat-raised-button (click)="deleteArticle()">Delete</button>
         </span>
+        <!--  -->
+
     </div>
     <p [innerHtml]="article?.content"></p>
     <p class="publication-date">{{ article?.publicationDate }}</p>

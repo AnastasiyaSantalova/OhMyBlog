@@ -3,6 +3,10 @@
     <span>
         <button mat-button routerLink="/articles">Articles</button>
         <button mat-button routerLink="/books">Books</button>
-        <button mat-button routerLink="/admin">Admin</button>
+        <!-- If user Singed In -->
+        <button mat-button *ngIf="auth.user | async" routerLink="/admin">Admin</button>
+        <button mat-button *ngIf="auth.user | async" (click)="signOutClicked()">Sign Out</button>
+        <!-- If user Singed Out -->
+        <button mat-button *ngIf="!(auth.user | async)" (click)="signInClicked()">Sign In</button>
     </span>
 </mat-toolbar>

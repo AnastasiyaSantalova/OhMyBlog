@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 import { Subscription } from 'rxjs';
 
@@ -18,7 +19,8 @@ export class ArticleDetailPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private articleService: ArticlesService
+    private articleService: ArticlesService,
+    public auth: AngularFireAuth
   ) { }
 
   ngOnInit(): void {
