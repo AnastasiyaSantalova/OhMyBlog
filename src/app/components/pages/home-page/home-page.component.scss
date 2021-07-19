@@ -1,0 +1,125 @@
+.home-page-wrapper {
+    height: 100%;
+    width: 100%;
+
+    .banner {
+        height: 400px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__content {
+            height: 90%;
+            width: 97%;
+
+            display: grid;
+            grid-template-columns: 50% 25% 25%;
+            grid-template-rows: 40% 20% 40%;
+            grid-template-areas: "g1 g2 g3"
+                                 "g1 g4 g3"
+                                 "g1 g4 g5";
+
+            .banner__block-1 {
+               grid-area: g1;
+               background-color: lightseagreen;
+            }
+
+            .banner__block-2 {
+                grid-area: g2;
+                background-color: lightskyblue;
+             }
+
+             .banner__block-3 {
+                grid-area: g3;
+                background-color: navajowhite;
+             }
+
+             .banner__block-4 {
+                grid-area: g4;
+                background-color: mediumpurple;
+             }
+
+             .banner__block-5 {
+                grid-area: g5;
+                background-color: olivedrab;
+             }
+        }
+
+        .block {
+            display: flex;
+            align-items: flex-end;
+
+            .banner-inner-block {
+                width: 100%;
+                height: 50%;
+                background-color: black;
+                opacity: 0.4;
+                display: none;
+            }
+
+            &:hover .banner-inner-block {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h2 {
+                    display: contents;
+                    opacity: 1;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .books-banner {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        &__content {
+            width: 97%;
+            height: 90%;
+            background-color: orange;
+
+            display: grid;
+            grid-template-columns: 33% 34% 33%;
+            grid-template-rows: 100%;
+            grid-template-areas: "gb1 gb2 gb3";
+
+            .books-banner__block-1 {
+                grid-area: gb1;
+                background-color: paleturquoise;
+            }
+
+            .books-banner__block-2 {
+                grid-area: gb2;
+                background-color: peachpuff;
+            }
+
+            .books-banner__block-3 {
+                grid-area: gb3;
+                background-color: plum;
+            }
+
+            .books-block {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .inner-block {
+                    width: 60%;
+                    height: 90%;
+                    background-color: royalblue;
+                }
+            }
+
+        }
+    }
+
+    .home-page-content {
+        padding: 30px 100px;
+    }
+}

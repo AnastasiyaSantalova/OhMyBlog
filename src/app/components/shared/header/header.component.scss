@@ -2,10 +2,20 @@ mat-toolbar {
     display: flex;
     justify-content: space-between;
 
+    button {
+        margin-left: 10px;
+    }
+
     a {
         text-decoration: none;
         text-transform: uppercase;
         color: aliceblue;
         font-size: 1.5rem;
+    }
+
+    .menu-buttons-container {
+        display: inline-block;
+        padding-right: 10px;
+        border-right: aliceblue 1px solid;
     }
 }

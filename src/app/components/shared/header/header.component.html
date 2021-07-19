@@ -1,12 +1,18 @@
 <mat-toolbar>
-    <span><a routerLink="/">Oh My Blog</a></span>
     <span>
-        <button mat-button routerLink="/articles">Articles</button>
-        <button mat-button routerLink="/books">Books</button>
+        <a routerLink="/">Oh My Blog</a>
+    </span>
+    <span>
+        <span class="menu-buttons-container">
+            <button class="menu-button" mat-button routerLink="/articles">Articles</button>
+            <button class="menu-button" mat-button routerLink="/books">Books</button>
+        </span>
         <!-- If user Singed In -->
-        <button mat-button *ngIf="auth.user | async" routerLink="/admin">Admin</button>
-        <button mat-button *ngIf="auth.user | async" (click)="signOutClicked()">Sign Out</button>
+        <span *ngIf="auth.user | async" class="menu-buttons-container">
+            <button class="admin-button" mat-button routerLink="/admin">Admin</button>
+        </span>
+        <button class="authorization" mat-button *ngIf="auth.user | async" (click)="signOutClicked()">Sign Out</button>
         <!-- If user Singed Out -->
-        <button mat-button *ngIf="!(auth.user | async)" (click)="signInClicked()">Sign In</button>
+        <button class="authorization" mat-button *ngIf="!(auth.user | async)" (click)="signInClicked()">Sign In</button>
     </span>
 </mat-toolbar>

@@ -1,15 +1,19 @@
-.publication-date {
-    font-size: 0.8rem;
-    font-style: italic;
-}
+.article-page-container {
+    padding: 30px 100px;
 
-.article-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    button.delete {
-        margin-left: 5px;
-        background-color: lightsalmon;
+    .publication-date {
+        font-size: 0.8rem;
+        font-style: italic;
+    }
+    
+    .article-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        button.delete {
+            margin-left: 5px;
+            background-color: lightsalmon;
+        }
     }
 }
